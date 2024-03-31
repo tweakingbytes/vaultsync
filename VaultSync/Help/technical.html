@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Secure Vault Technical Details</title>
+</head>
+<body>
+    <h1>Troubleshooting</h1>
+    <h2>Secure File System</h2>
+    <p>
+        Files are stored on the external drive in a folder called <b>VaultSync</b>. The location is usually in the same folder as the VaultSync program file.
+    </p>
+    <p>
+        The vault contains an index, a control file and folders containing the files.
+        The folders help speed up file management on flash drives that don't perform well with lots of files in a single folder. The folders and the files are named anonomously.
+    </p>
+    <h2>Getting out of trouble</h2>
+    <ul>
+        <li>
+            VaultSync has a lot of error checking code but sometimes things happen that it can't control. VaultSync will always try to protect the current vault in the event of a
+            problem and tell you what has happened. Often the problem is temporary and is resolved by running VaultSync again.
+        </li>
+        <li>
+            The index is encrypted but the last working version is always kept in case something unexpected happens. In the unlikely event that the index is unable to be opened
+            then remove the corrupted version <b>index.dat</b> and rename <b>index.bak</b> as <b>index.dat</b>.
+            A corrupted index is usually noticible from Windows Explorer becasue the file size is very different to the backup.
+        </li>
+        <li>If the <b>control.dat</b> file is missing then the vault has been corrupted and cannot be recovered. Be very careful not to accidentially delete this file.</li>
+        <li>
+            Synchronised offline file systems like OneDrive, etc. use hidden control files that may be temporarily locked when VaultSync is synchronising. The reported error
+            can safely be ignored. The file can also be added to the Ignore list so it isn't synchronised next time. You need to be careful with the Ignore pattern so that other
+            files are not accidentially also ignored.
+        </li>
+    </ul>
+    <div class="btn-box">
+        <a class="btn-off btn btn-right" href="technical.html"> Next > </a>
+        <a class="btn-on btn btn-left" href="help.html"> < Previous </a>
+        <a class="btn-on btn btn-center" href="index.html"> Home </a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+body {
+    background-color: aliceblue;
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.btn-box {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.btn-left {
+    float: left;
+}
+
+.btn-right {
+    float: right;
+}
+
+.btn-center {
+    float: none;
+}
+
+.btn-off {
+    background-color: lightsteelblue;
+}
+
+.btn-on {
+    background-color: deepskyblue;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.btn-image {
+    width: 32px;
+    height: 32px;
+}

@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Vault Sync Help</title>
+</head>
+<body>
+    <h1>Contents</h1>
+    <ul>
+        <li><a href="#install">Installing</a></li>
+        <li><a href="#tabs">Tabs and lists</a></li>
+        <li><a href="#create">Create a new Vault</a></li>
+        <li><a href="#add-sync">Add Synchronisation files and folders</a></li>
+        <li><a href="#add-ignore">Add Ignore patterns</a></li>
+        <li><a href="#navigate">Navigate Files</a></li>
+        <li><a href="#extract">Extract Files and Folders</a></li>
+        <li><a href="#pwd-change">Change the Password</a></li>
+        <li><a href="#delete">Delete List Items</a></li>
+        <li><a href="#progress">Progress Bars</a></li>
+        <li><a href="#motivation">What does SecureVault do?</a></li>
+    </ul>
+
+    <h2 id="install">Installing</h2>
+    VaultSync installs an external drive without an installation on the computer. Just unzip the files on the flash using the self extracting program <b>install.exe</b>.
+
+    <h2 id="tabs">Tabs and Lists</h2>
+    Information is stored in three lists and each is on a tab.
+    The tabs looks like this:
+    <br /> <img src="images/tabs.png" />
+    <br />
+    <p>The tool bar buttons are enabled and disabled depending on the selected tab and the items in the lists.</p>
+    <h3>Files List</h3>
+    <p>
+        This list contains all the files that have been stored in the vault. Whenever the file list is empty, the tab is switched to the synchronisation tab. Files are displayed with their full path,
+        the last update date/time, the file size and the computer name of the computer on which the file originated. The list headings sort by clicking on the column heading.
+    </p>
+    <p>
+        The file lists start at the root folders of the drives, C:, D:, etc. Double click on the folders to go down a level to reveal the files within the folder. Double click on a file 
+        extracts the file to a temporary location and opens the file for viewing using the default viewer for the file type.
+    </p>
+    <h3>Sunchronisation List</h3>
+    <p>The synchronisation list contains folders or files that are to be synchronised into the vault if they change. </p>
+    <h3>Ignore List</h3>
+    Th ignore list contains file patterns to be ignored when they are found in the file system. This is very useful when a folder is being synchronised that contains files that are not
+    necessary to save, e.g. desktop.ini, thumnails or DLLs. It is often easier and more robust to synchronise a whole folder and ignore some of the contained files.
+
+    <h2 id="create">Create a new Vault</h2>
+    <p>
+        When the program starts it looks for a vault in the current directory. If it doesn't exist then you are asked if one should be created. Answering 'Yes' will open the new password
+        dialog to obtain a password for the new vault. Answering 'No' will terminate the program.
+    </p>
+    <p>The process of creating a new password is the same as the <a href="#pwd-change">Change the Password</a> process.</p>
+
+    <h2 id="add-sync">Add Synchronisation Files and Folders</h2>
+    <p>
+        VaultSync works by keeping a set of folders and files on a computer synchronised with the vault. It is necessary to have at least one item in the synchronisation list for
+        the vault to contain anything. Either folders or files can be included in the synchronisation list, with folders, e.g. Documents and Pictures, being the most useful.
+    </p>
+    Use the tool bar buttons to add items.
+    <div>
+        <img src="images/add_file.png" class="btn-image" /> Add a file to the list. A button press brings up the file selection dialog in multi-select mode. Select all the files to synchronise
+        and press 'Open'.
+    </div>
+
+    <div>
+        <img src="images/add_folder.png" class="btn-image" /> Add a folder to the list. A button press brings up the folder selection dialog. Select a folder to synchronise
+        and press 'OK'.
+    </div>
+
+    <p>You can also paste files from Windows Explorer using Control-V, or use drag and drop.</p>
+
+    <p>
+        Once there are some files to synchronise, the synchronisation tool bar button <img src="images/sync.png" class="btn-image" /> is enabled.
+    </p>
+
+    <h2 id="add-ignore">Add Ignore patterns</h2>
+    <h3>Add with the tool bar</h3>
+    Use the tool bar add item button <img src="images/add_file.png" class="btn-image" /> to add an ignore pattern.
+    <p>
+        A button press brings up the ignore pattern input dialog. Type in an ignore pattern and
+        press 'OK'.
+    </p>
+    <div>
+        <img src="images/ignore-pattern.png" />
+        <br />
+        An ignore pattern is any valid file name with wild card characters, e.g. * and ?. In the usual convention * matches any number of characters and ? matches
+        one character. An example ignore pattern is <em>*\desktop.ini</em>, which ignores desktop.ini files whereever they appear in the folder structure.
+        <p>Note that the pattern *.* matches any file that has an extension and is not equivalent to 'all files'.</p>
+    </div>
+
+    <h3>Add with the right click menu</h3>
+    If an unecessary file has already been stored in the vault then it can be ignored by selecting <em>Ignore</em> on the right click menu in the File list. This brings up the ignore pattern input dialog
+    with the file name already filled in. If the selected item is a folder then a folder pattern is automatically generated, e.g. <em>c:\keepfolder\ignorefolder\*</em>. However, the newly ignored file is
+    not deleted from the FIle list. It is just ignored when synchronising. If it is truly not required then <a href="#delete"> delete </a> it.
+
+    <h3>Changing an existing pattern</h3>
+    Double click on an Ignore Pattern to bring up the ignore pattern input dialog with the pattern filled in. Make the changes and press 'OK' to save the change, or 'Cancel' to cancel the change.
+
+    <h2 id="navigate">Navigate Files</h2>
+    The file tab enables tool bar buttons for navigation. Navigating down folders is acheived by double cliking the folder, in the same way as Windows Explorer. Two other navigation buttons are
+    available on the tool bar.
+    <div>
+        <img src="images/up.png" class="btn-image" /> Moves the folder view back to the top level folder, e.g. C:. The button is disabled when the list is already displaying the top folder.
+    </div>
+    <div>
+        <img src="images/left.png" class="btn-image" /> Moves the folder view back one folder toward the top folder. The button is disabled when the list is already displaying the top folder.
+    </div>
+
+    <h2 id="extract">Extract Files and Folders</h2>
+    <p>
+        <img src="images/extract.png" class="btn-image" /> The extract tool bar button is enabled when a selection is made in the file list. The files list is multi-select so it is possible
+        to select more than one item to extract. Files can also be extracted using the right click menu in the Files list.
+    </p>
+    <p>
+        Files can be extracted to their original location or another location. If the files were not originally stored on the same computer that they are being extracted onto then it may not be
+        possible to resore them to the same location.
+        <br /><img src="images/extract-to-original.png" /><br />
+        If you answer 'Yes' then the files extract to the original location. If you answer 'No' then the folder selector dialog is shown for you to select the folder. If you cancel then
+        the extraction is cancelled.
+    </p>
+
+    <p>
+        Files may be being extracted on a different computer to the one they were stored from. VaultSync detect this and asks what to do.  <br /><img src="images/extract-check.png" /><br />
+        If you answer 'Yes' then the file is extracted. If you answer 'No' then the file is not extracted. If you cancel then the extraction is cancelled. The check box allows the answer to be
+        applied to all future decisions so the dialog is not shown from then on.
+    </p>
+
+    <h2 id="pwd-change"> Change the Password </h2>
+    <div>
+        Request a password change by pressing the key <img src="images/key.ico" class="btn-image" /> on the tool bar.
+    </div>
+    <p>
+        The password dialog requests a password and a repeat of it. The repeat must match the first password to enable to 'OK' button and remove the colored highlight in the repeat background.
+        This is a simple way to help the password to be remembered. It is vitally important the password isn't forgotten because there is no way to recover it and unlock the data.
+    </p>
+    <p>
+        <img src="images/new-password.png" />
+    <p>
+        Password quality is estimated by looking at the number of different character types and the length of the password. It isn't necessary to use a lot of different character
+        types, e.g. lower case, digits, etc, but then the passwords have to be longer to be secure. The quality measure is in bits, which is the minimum number of bits required to store the password.
+        A password of more than 90 bits is strong. The coloured bar uses 128 bits as its reference, so the bar is full and green when 128 bits is reached. Using keyboard sequences, e.g.
+        qwerty, reduces the number of bits. A passphrase is more secure and easier to remember than a password.
+    </p>
+    <br />
+
+    <h2 id="delete"> Delete List Items </h2>
+    There are three ways to delete selected items from the lists.
+    <ul>
+        <li>Press the delete <img src="images/delete.png" class="btn-image" />on the tool bar .</li>
+        <li>Press the 'Del' key.</li>
+        <li>Right click and select 'Delete' from the right click menu. </li>
+    </ul>
+
+    <h2 id="progress">Progress Bars</h2>
+    Progress Bars display whenever an operation is being performed that may take a little time. The Progress dialog displays the progress bar and the name of the file that is currently being worked on.
+    The operation can be stopped by pressing the Cancel button. If the operation is cancelled then whatever was being done is partially complete. For example, if the operation is deleting files
+    then some will have been deleted and others not. <br />
+    <img src="images/progress.png" />
+
+    <h2 id="motivation">What does VaultSync do?</h2>
+    <p>
+        VaultSync keeps synchronised data backups from one or more computers in an encrypted vault that is locked with a password.
+        It is optimised to operate on a flash or external drive with minimal installation but it can also work on a hosted storage system like Dropbox, One Drive or Google Drive.
+    </p>
+    <p>
+        It is really important that a backup is simple and fast to make. There is no point in having to decide what files are important or what
+        has changed at the time of the backup, or having to manually remove unimportant files from a deep folder hierarchy after a backup. Some lucky people have to keep backups
+        from personal and work computers when they are travelling, so having a backup system that knows where a file is from is helpful when there
+        are potential name clashes between systems.
+    </p>
+
+    The key features are:
+    <ul>
+        <li>A single click to perform the backup once the synchronisation folders are set up.</li>
+        <li>Only changed or new files and folders are synchronised with the vault . No need to keep track of changes,  copy and paste, drag and drop or post copy clean up.</li>
+        <li>Files or folders can be configured to be ignored for times when an important directoy is being synchronised that contains sub-folders or files that are not important. </li>
+        <li>The source computer name is stored with the files so there are no name clashes between systems. File can be restored wherever is convenient and VaultSync provides options when extracting files on a different computer to that on which they originally resided. </l>
+<li>Files are anonomized so an attacker cannot discover their contents from their name.</li>
+        <li>The password can be changed without having to re-encrypt the files.</li>
+        <li>Encryption is standard 256 bit AES.</li>
+    </ul>
+
+    <div class="btn-box">
+        <a class="btn-on btn btn-right" href="technical.html"> Next > </a>
+        <a class="btn-on btn btn-left" href="index.html"> < Previous </a>
+        <a class="btn-on btn btn-center" href="index.html"> Home </a>
+    </div>
+
+</body>
+</html>
